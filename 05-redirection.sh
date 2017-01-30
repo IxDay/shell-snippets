@@ -8,3 +8,6 @@ grep bar <<< "$FOO"
 
 # this also works
 grep bar <<< "foo bar baz"
+
+# also some redirection, echo to stderr then redirect everything to /dev/null
+(>&2 echo "foo") &> /dev/null
