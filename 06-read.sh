@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# http://stackoverflow.com/questions/10929453/read-a-file-line-by-line-assigning-the-value-to-a-variable
+
 tmpfile=$(mktemp)
 trap "rm $tmpfile" EXIT
 
