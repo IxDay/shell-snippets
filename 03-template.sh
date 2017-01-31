@@ -17,12 +17,12 @@ EOF
 # Concatenation
 cat >> "$tmpfile" << EOF
 adding more informations
-
 EOF
 
 cat "$tmpfile"
 rm "$tmpfile"
 
+echo "---"
 # Also works for variables (-r backslash does not act as an escape character)
 read -r -d '' VAR << EOF
 testing templating $FOO, ${BAR}s
@@ -32,10 +32,19 @@ EOF
 # Concatenation
 read -r -d '' VAR << EOF
 $VAR
-adding more informations\n
+adding more informations
 EOF
 
 echo "$VAR"
+echo "---"
+
+# multiline echo
+cat << EOF
+multiline echo is also easy
+(this is second line)
+EOF
+
+echo "---"
 
 # function usage
 func () {
